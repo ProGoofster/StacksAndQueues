@@ -1,0 +1,51 @@
+Given an empty stack, what will be the contents of the stack after the
+following operations? (Hint: When you have a method inside another method call (e.g., this(that()), that()
+will be executed first, afterwards this() will be executed)
+• push(8)
+8
+• push(2)
+2, 8
+• pop()
+8
+• push(pop()*2)
+16
+• push(10)
+10, 16
+• push(pop()/2)
+5, 16
+
+Given an empty queue, what will be the contents of the stack after the
+following operations? (Hint: When you have a method inside another method call (e.g., this(that()), that()
+will be executed first, afterwards this() will be executed)
+• push(4)
+4
+• push(pop()+4)
+8
+• push(8)
+8, 8
+• push(pop()/2)
+4, 8
+• pop()
+4
+• pop()
+empty
+
+We discussed that using a doubly-linked list, you are able to search an
+element in O(n/2), the same is true for a deque.
+Given a Deque q and an element y, provide an algorithm that finds the position in the deque in which
+element x is stored in O(n/2).
+
+function findPositionInDeque(deque, x):
+    left = 0
+    right = deque.size() - 1
+
+    while left <= right:
+        if deque[left] == x:
+            return left
+        if deque[right] == x:
+            return right
+
+        left++
+        right--
+
+    return -1 // not in deque
