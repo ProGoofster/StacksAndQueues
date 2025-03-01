@@ -10,6 +10,8 @@ public class BalancedBrackets {
         System.out.println(IsBalanced("{{[[(())]]}}"));
     }
 
+    //time complexity: O(n) where n is the length of the string (it's O(n/2) but simplifies down)
+    //space complexity: O(1), amount of variables declared doesn't grow with input
     public static String IsBalanced(String s){
         if(s.length() % 2 != 0) return "NO";
         int i = 0;
@@ -24,7 +26,7 @@ public class BalancedBrackets {
         return "YES"; //this is so dumb why can't I just return a boolean.
     }
 
-    public static boolean DoBracketsMatch(char open, char close){
+    private static boolean DoBracketsMatch(char open, char close){
         return (open == '(' && close == ')') || ( open == '{' && close == '}') ||( open == '[' && close == ']');
     }
 }
